@@ -7,6 +7,7 @@ on early-init
 # create mountpoints
     mkdir /mnt 0775 root system
     mkdir /mnt/sdcard 0000 system system
+    mkdir /mnt/usb2 0000 system system
 
 on init
 
@@ -29,6 +30,7 @@ loglevel 3
 # Backward compatibility
     symlink /system/etc /etc
     symlink /sys/kernel/debug /d
+    symlink /mnt/usb2 /usb2
 
 # Right now vendor lives on the same filesystem as system,
 # but someday that may change.
