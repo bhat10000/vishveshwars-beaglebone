@@ -16,14 +16,16 @@
 
 
 PRODUCT_COPY_FILES := \
-	device/ti/beaglebone/init.rc:root/init.rc \
+	device/ti/beaglebone/init.am335xevm.rc:root/init.am335xevm.rc \
+	device/ti/beaglebone/init.am335xevm.usb.rc:root/init.am335xevm.usb.rc \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
 
 
 PRODUCT_PROPERTY_OVERRIDES := \
-	hwui.render_dirty_regions=false
+	hwui.render_dirty_regions=false \
+	ro.sf.lcd_density=120
 
-PRODUCT_CHARACTERISTICS := tablet,nosdcard
+PRODUCT_CHARACTERISTICS := tablet
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/ti/beaglebone/overlay
@@ -50,7 +52,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	make_ext4fs
 
-PRODUCT_PACKAGES += \
-	androidvncserver
-
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product-if-exists, external/tslib/tslib.mk)
