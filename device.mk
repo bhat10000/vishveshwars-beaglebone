@@ -21,6 +21,9 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
 	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml
 
+# KeyPads
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 
 PRODUCT_PROPERTY_OVERRIDES := \
 	hwui.render_dirty_regions=false \
