@@ -26,8 +26,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 
 PRODUCT_PROPERTY_OVERRIDES := \
-	hwui.render_dirty_regions=false \
-	ro.sf.lcd_density=120
+       hwui.render_dirty_regions=false
+
+# Explicitly specify dpi, otherwise the icons don't show up correctly with SGX enabled
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.sf.lcd_density=160
 
 PRODUCT_CHARACTERISTICS := tablet
 
