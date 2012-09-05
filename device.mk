@@ -59,5 +59,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	make_ext4fs
 
+# Backlight HAL (liblights)
+PRODUCT_PACKAGES += \
+	lights.beaglebone
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, external/tslib/tslib.mk)
