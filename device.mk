@@ -63,5 +63,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	lights.beaglebone
 
+PRODUCT_PACKAGES += \
+	FileManager-1.1.6
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, external/tslib/tslib.mk)
