@@ -62,3 +62,8 @@ service iprenew_eth0 /system/bin/dhcpcd -n
 # underlying files in /data/media wil be created with user and group media_rw (1023)
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class late_start
+
+# VNC Server service
+service androidvncserver /system/bin/androidvncserver
+    disabled
+    oneshot
