@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1
 
-PRODUCT_CHARACTERISTICS := tablet, nosdcard
+PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/ti/beaglebone/overlay
