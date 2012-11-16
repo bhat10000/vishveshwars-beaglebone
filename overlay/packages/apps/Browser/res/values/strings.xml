@@ -19,7 +19,7 @@
             user signs up the device with a Google sites account, the site's
             domain will be appended. -->
     <string name="homepage_base" translatable="false">
-        http://http://www.ti.com</string>
+        http://www.ti.com</string>
 
     <!-- Bookmarks -->
     <string-array name="bookmarks" translatable="false">
