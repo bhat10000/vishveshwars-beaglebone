@@ -27,6 +27,8 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
 
+    mkdir /data/misc/camera 0770 media media
+
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
@@ -49,6 +51,10 @@ on fs
 
     # This board does not have battery, force battery-level to 100%
     setprop hw.nobattery true
+
+    # Set Camera permission
+    chmod 0666 /dev/video0
+    chown root root /dev/video0
 
 service pvr /system/bin/sgx/rc.pvr start
     class core

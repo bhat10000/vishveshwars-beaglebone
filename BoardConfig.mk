@@ -17,7 +17,7 @@
 # These two variables are set first, so they can be overridden
 # by BoardConfigVendor.mk
 #BOARD_USES_GENERIC_AUDIO := true
-USE_CAMERA_STUB := true
+#USE_CAMERA_STUB := true
 BOARD_EGL_CFG := device/ti/beaglebone/egl.cfg
 
 # Use the non-open-source parts, if they're present
@@ -41,6 +41,7 @@ BOARD_KERNEL_BASE := 0x80000000
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := omap3
 TARGET_BOOTLOADER_BOARD_NAME := beaglebone
+BOARD_HAVE_CAMERA_CAPE := true
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true

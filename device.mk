@@ -20,6 +20,7 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/init.am335xevm.usb.rc:root/init.am335xevm.usb.rc \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
 	device/ti/beaglebone/fstab.am335xevm:root/fstab.am335xevm \
+	device/ti/beaglebone/ueventd.am335xevm.rc:root/ueventd.am335xevm.rc \
 	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml
 
 # KeyPads
@@ -74,6 +75,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	androidvncserver
+
+PRODUCT_PACKAGES += \
+	camera.omap3
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, external/tslib/tslib.mk)
