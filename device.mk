@@ -19,6 +19,7 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/init.am335xevm.rc:root/init.am335xevm.rc \
 	device/ti/beaglebone/init.am335xevm.usb.rc:root/init.am335xevm.usb.rc \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
+	device/ti/beaglebone/fstab.am335xevm:root/fstab.am335xevm \
 	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml
 
 # KeyPads
