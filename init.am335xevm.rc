@@ -23,9 +23,9 @@ on init
     mkdir /storage/sdcard1 0000 system system
 
     # create directory for mounting usb drives
-#    mkdir /storage/usb1 0666 system system
-#    symlink /storage/usb1 /usbdrive
-#    symlink /storage/usb1 /mnt/usb1
+    mkdir /storage/usb1 0666 system system
+    symlink /storage/usb1 /usbdrive
+    symlink /storage/usb1 /mnt/usb1
 
 on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp

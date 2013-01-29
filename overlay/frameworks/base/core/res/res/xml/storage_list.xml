@@ -45,9 +45,7 @@
              android:storageDescription="@string/storage_sd_card"
              android:removable="true" />
 
-<!--
     <storage android:mountPoint="/storage/usb1"
              android:storageDescription="@string/storage_usb"
              android:removable="true" />
--->
 </StorageList>
