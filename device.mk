@@ -23,6 +23,9 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/ueventd.am335xevm.rc:root/ueventd.am335xevm.rc \
 	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml
 
+PRODUCT_COPY_FILES += \
+	device/ti/beaglebone/apns-full-conf.xml:system/etc/apns-conf.xml
+
 # KeyPads
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
