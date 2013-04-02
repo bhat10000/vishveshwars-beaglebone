@@ -27,6 +27,9 @@ PRODUCT_COPY_FILES += \
 	device/ti/beaglebone/apns-full-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
+PRODUCT_COPY_FILES += \
 	device/ti/beaglebone/ppp/ip-up-datakey:system/etc/ppp/ip-up-datakey \
 	device/ti/beaglebone/ppp/ip-down-datakey:system/etc/ppp/ip-down-datakey \
 	device/ti/beaglebone/usbmodeswitch.conf:system/etc/usbmodeswitch.conf
