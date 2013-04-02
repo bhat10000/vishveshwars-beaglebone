@@ -90,5 +90,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	camera.omap3
 
+PRODUCT_PACKAGES += \
+	rild
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, external/tslib/tslib.mk)
