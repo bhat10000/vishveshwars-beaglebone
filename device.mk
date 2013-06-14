@@ -21,7 +21,8 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
 	device/ti/beaglebone/fstab.am335xevm:root/fstab.am335xevm \
 	device/ti/beaglebone/ueventd.am335xevm.rc:root/ueventd.am335xevm.rc \
-	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml
+	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml \
+	device/ti/beaglebone/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
 	device/ti/beaglebone/apns-full-conf.xml:system/etc/apns-conf.xml
