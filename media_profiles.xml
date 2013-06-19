@@ -80,11 +80,20 @@
     <CamcorderProfiles cameraId="0">
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="30">
+            <!-- USB Camera settings -->
+            <Video codec="h264"
+                   bitRate="256000"
+                   width="176"
+                   height="144"
+                   frameRate="20" />
+            <!-- Camera cape settings -->
+            <!--
             <Video codec="h264"
                    bitRate="256000"
                    width="256"
                    height="256"
                    frameRate="20" />
+            -->
 
             <Audio codec="amrnb"
                    bitRate="12200"
