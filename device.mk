@@ -24,17 +24,6 @@ PRODUCT_COPY_FILES := \
 	device/ti/beaglebone/media_codecs.xml:system/etc/media_codecs.xml \
 	device/ti/beaglebone/media_profiles.xml:system/etc/media_profiles.xml
 
-PRODUCT_COPY_FILES += \
-	device/ti/beaglebone/apns-full-conf.xml:system/etc/apns-conf.xml
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-PRODUCT_COPY_FILES += \
-	device/ti/beaglebone/ppp/ip-up-datakey:system/etc/ppp/ip-up-datakey \
-	device/ti/beaglebone/ppp/ip-down-datakey:system/etc/ppp/ip-down-datakey \
-	device/ti/beaglebone/usbmodeswitch.conf:system/etc/usbmodeswitch.conf
-
 # KeyPads
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
@@ -90,9 +79,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	camera.omap3
-
-PRODUCT_PACKAGES += \
-	rild
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, external/tslib/tslib.mk)

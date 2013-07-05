@@ -82,18 +82,3 @@ service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
 service androidvncserver /system/bin/androidvncserver
     disabled
     oneshot
-
-service ril-daemon /system/bin/rild -l /system/lib/libreference-ril.so -- -d /dev/ttyUSB2
-    class main
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw vpn net_admin
-
-#Download usb_modeswitch ARM complied binrary from
-#    http://www.draisberghof.de/usb_modeswitch/#download
-#    and place it in "/system/bin" folder of your filesystem with "usb_modeswitch" name.
-service usb_modeswitch /system/bin/usb_modeswitch -I -W -c /etc/usbmodeswitch.conf
-    class main
-    disabled
-    oneshot

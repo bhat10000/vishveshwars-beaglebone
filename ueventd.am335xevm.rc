@@ -1,6 +1,1 @@
 /dev/video0         0666  root       root
-
-# USB 3G modem
-/dev/ttyUSB0   0660    radio   radio
-/dev/ttyUSB1   0660    radio   radio
-/dev/ttyUSB2   0660    radio   radio
