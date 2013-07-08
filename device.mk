@@ -80,5 +80,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	camera.omap3
 
+# host package required for making sdcard tarball
+PRODUCT_PACKAGES += \
+	fs_get_stats
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
-$(call inherit-product-if-exists, external/tslib/tslib.mk)
