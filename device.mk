@@ -52,15 +52,6 @@ PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
-	libaudioutils
-
-PRODUCT_PACKAGES += \
-        audio.primary.beaglebone \
-        tinycap \
-        tinymix \
-        tinyplay
-
-PRODUCT_PACKAGES += \
 	dhcpcd.conf
 
 # Filesystem management tools
@@ -70,15 +61,6 @@ PRODUCT_PACKAGES += \
 # Backlight HAL (liblights)
 PRODUCT_PACKAGES += \
 	lights.beaglebone
-
-PRODUCT_PACKAGES += \
-	FileManager-1.1.6
-
-PRODUCT_PACKAGES += \
-	androidvncserver
-
-PRODUCT_PACKAGES += \
-	camera.omap3
 
 # host package required for making sdcard tarball
 PRODUCT_PACKAGES += \
