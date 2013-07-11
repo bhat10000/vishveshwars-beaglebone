@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	lights.beaglebone
 
+# Beaglebone custom gralloc
+PRODUCT_PACKAGES += \
+	gralloc.beaglebone
+
 # host package required for making sdcard tarball
 PRODUCT_PACKAGES += \
 	fs_get_stats
