@@ -61,12 +61,10 @@ on fs
     chown root root /dev/video0
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL -f/system/etc/dhcpcd/dhcpcd.conf
-    class main
     disabled
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
-    class main
     disabled
     oneshot
 
