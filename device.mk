@@ -16,6 +16,7 @@
 
 
 PRODUCT_COPY_FILES := \
+	device/ti/beaglebone/init.rc:root/init.rc \
 	device/ti/beaglebone/init.am335xevm.rc:root/init.am335xevm.rc \
 	device/ti/beaglebone/init.am335xevm.usb.rc:root/init.am335xevm.usb.rc \
 	device/ti/beaglebone/vold.fstab:system/etc/vold.fstab \
