@@ -37,6 +37,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.sf.lcd_density=160
 
+# This device has 'only' 512MB of RAM
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.config.low_ram=true
+
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1
