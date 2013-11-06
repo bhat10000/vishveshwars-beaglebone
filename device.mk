@@ -41,6 +41,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.config.low_ram=true
 
+# HACK: get surfaceflinger working in absence of SGX libraries
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.kernel.qemu=1 \
+       ro.kernel.qemu.gles=0
+
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1
