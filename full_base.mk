@@ -62,4 +62,4 @@ $(call inherit-product-if-exists, external/svox/pico/lang/all_pico_languages.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 
 # Get everything else from the parent package
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
+$(call inherit-product, device/ti/beaglebone/generic_no_telephony.mk)
