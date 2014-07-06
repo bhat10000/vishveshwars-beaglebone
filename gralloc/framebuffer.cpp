@@ -42,6 +42,13 @@
 
 /*****************************************************************************/
 
+// Set TARGET_USE_PAN_DISPLAY to true at compile time if the
+// board uses FBIOPAN_DISPLAY to setup page flipping, otherwise
+// default ioctl to do page-flipping is FBIOPUT_VSCREENINFO.
+#ifndef USE_PAN_DISPLAY
+#define USE_PAN_DISPLAY 0
+#endif
+
 // numbers of buffers for page flipping
 #define NUM_BUFFERS 2
 
@@ -97,13 +104,8 @@ static int fb_post(struct framebuffer_device_t* dev, buffer_handle_t buffer)
         const size_t offset = hnd->base - m->framebuffer->base;
         m->info.activate = FB_ACTIVATE_VBL;
         m->info.yoffset = offset / m->finfo.line_length;
-        if (ioctl(m->framebuffer->fd, FBIOPAN_DISPLAY, &m->info) == -1) {
-            ALOGE("FBIOPAN_DISPLAY failed");
-            m->base.unlock(&m->base, buffer); 
-            return -errno;
-        }
-        if (ioctl(m->framebuffer->fd, FBIO_WAITFORVSYNC, 0)) {
-            ALOGE("FBIO_WAITFORVSYNC failed");
+        if (ioctl(m->framebuffer->fd, FBIOPUT_VSCREENINFO, &m->info) == -1) {
+            ALOGE("FBIOPUT_VSCREENINFO failed");
             m->base.unlock(&m->base, buffer); 
             return -errno;
         }
@@ -183,10 +185,15 @@ int mapFrameBufferLocked(struct private_module_t* module)
 
 
     uint32_t flags = PAGE_FLIP;
+#if USE_PAN_DISPLAY
+    if (ioctl(fd, FBIOPAN_DISPLAY, &info) == -1) {
+        ALOGW("FBIOPAN_DISPLAY failed, page flipping not supported");
+#else
     if (ioctl(fd, FBIOPUT_VSCREENINFO, &info) == -1) {
+        ALOGW("FBIOPUT_VSCREENINFO failed, page flipping not supported");
+#endif
         info.yres_virtual = info.yres;
         flags &= ~PAGE_FLIP;
-        ALOGW("FBIOPUT_VSCREENINFO failed, page flipping not supported");
     }
 
     if (info.yres_virtual < info.yres * 2) {
@@ -335,7 +342,7 @@ int fb_device_open(hw_module_t const* module, const char* name,
         if (status >= 0) {
             int stride = m->finfo.line_length / (m->info.bits_per_pixel >> 3);
             int format = (m->info.bits_per_pixel == 32)
-                         ? HAL_PIXEL_FORMAT_RGBX_8888
+                         ? (m->info.red.offset ? HAL_PIXEL_FORMAT_BGRA_8888 : HAL_PIXEL_FORMAT_RGBX_8888)
                          : HAL_PIXEL_FORMAT_RGB_565;
             const_cast<uint32_t&>(dev->device.flags) = 0;
             const_cast<uint32_t&>(dev->device.width) = m->info.xres;
