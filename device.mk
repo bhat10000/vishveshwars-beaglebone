@@ -45,6 +45,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.kernel.qemu=1 \
        ro.kernel.qemu.gles=0
+PRODUCT_PACKAGES += \
+	libGLES_android
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
