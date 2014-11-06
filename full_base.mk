@@ -22,11 +22,9 @@
 PRODUCT_PACKAGES := \
     libfwdlockengine \
     OpenWnn \
-    PinyinIME \
     libWnnEngDic \
     libWnnJpnDic \
     libwnndict \
-    VideoEditor \
     WAPPushManager
 
 # Additional settings used in all AOSP builds
