@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Support only English!
+export LANG=C
+export LC_ALL=C
+
 EXPECTED_ARGS=1
 if [ $# == $EXPECTED_ARGS ]
 then
